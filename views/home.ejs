@@ -1,0 +1,21 @@
+<%- include("partials/header") -%>
+    <h1>Home</h1>
+    <p>
+        <%= StartingContent %>
+         <!-- for(i=0;i<items.length;i++){  -->
+        <!--  console.log(items[i].title);};  -->
+
+        <!-- differ method for loop -->
+        <!--  items.forEach(function(item){ 
+         console.log(item.title); });  -->
+
+        <% items.forEach(function(item){ %>
+        <h1> <%=item.title%></h1>
+        <p> 
+            <%=item.content.substring(0,100)+" ..."%><br>
+            <a href="/posts/<%=item.title%>">Read More</a>
+        </p>
+        <%})%>
+
+    </p>
+<%- include("partials/footer.ejs") -%>
